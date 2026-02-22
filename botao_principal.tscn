@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://iupichumrp0l"]
+
+[ext_resource type="Texture2D" uid="uid://cwm0mmwrtyrk2" path="res://FarmSprites/FarmSprites/sprite_tree00.png" id="1_cwrvi"]
+[ext_resource type="Texture2D" uid="uid://d2635fltxeo5h" path="res://FarmSprites/FarmSprites/sprite_tree25.png" id="1_to1lb"]
+[ext_resource type="Script" uid="uid://bn5r0ws4ecu3" path="res://botao_principal.gd" id="1_vk7xk"]
+[ext_resource type="Texture2D" uid="uid://bl6waqvnimlic" path="res://FarmSprites/FarmSprites/sprite_tree01.png" id="2_vk7xk"]
+[ext_resource type="Texture2D" uid="uid://hx2bsw45gjhb" path="res://FarmSprites/FarmSprites/sprite_tree02.png" id="3_f3m4x"]
+[ext_resource type="Texture2D" uid="uid://wg5lag1dq2wh" path="res://FarmSprites/FarmSprites/sprite_tree03.png" id="4_esa8i"]
+[ext_resource type="Texture2D" uid="uid://upyycg12gy0r" path="res://FarmSprites/FarmSprites/sprite_tree04.png" id="5_s2yc1"]
+[ext_resource type="Texture2D" uid="uid://cis3jg0pneo7t" path="res://FarmSprites/FarmSprites/sprite_tree05.png" id="6_ev7gy"]
+[ext_resource type="Texture2D" uid="uid://bx4ll63p7vnh0" path="res://FarmSprites/FarmSprites/sprite_tree06.png" id="7_fmwmj"]
+[ext_resource type="Texture2D" uid="uid://c4uw6fq3mqdrt" path="res://FarmSprites/FarmSprites/sprite_tree07.png" id="8_px6ua"]
+[ext_resource type="Texture2D" uid="uid://b7bjy5kb46j3l" path="res://FarmSprites/FarmSprites/sprite_tree08.png" id="9_jwq3e"]
+[ext_resource type="Texture2D" uid="uid://cwjtkaalxh0p5" path="res://FarmSprites/FarmSprites/sprite_tree09.png" id="10_sq01i"]
+[ext_resource type="Texture2D" uid="uid://cpuas7a21er1t" path="res://FarmSprites/FarmSprites/sprite_tree10.png" id="11_k42kd"]
+[ext_resource type="Texture2D" uid="uid://pokgdh0a1bpq" path="res://FarmSprites/FarmSprites/sprite_tree11.png" id="12_rsunm"]
+[ext_resource type="Texture2D" uid="uid://dxrrwslg5qpwf" path="res://FarmSprites/FarmSprites/sprite_tree12.png" id="13_nhu1u"]
+[ext_resource type="Texture2D" uid="uid://lwvyq5ruhmmv" path="res://FarmSprites/FarmSprites/sprite_tree13.png" id="14_a237r"]
+[ext_resource type="Texture2D" uid="uid://dhm7yan86ttrl" path="res://FarmSprites/FarmSprites/sprite_tree14.png" id="15_suvxt"]
+[ext_resource type="Texture2D" uid="uid://8dg5r3bjacjc" path="res://FarmSprites/FarmSprites/sprite_tree15.png" id="16_3qwv0"]
+[ext_resource type="Texture2D" uid="uid://dukxnerqoula0" path="res://FarmSprites/FarmSprites/sprite_tree16.png" id="17_xxhua"]
+[ext_resource type="Texture2D" uid="uid://e1jyu8ok2ddk" path="res://FarmSprites/FarmSprites/sprite_tree17.png" id="18_f7x46"]
+[ext_resource type="Texture2D" uid="uid://dwe140hphdlev" path="res://FarmSprites/FarmSprites/sprite_tree18.png" id="19_jwy8o"]
+[ext_resource type="Texture2D" uid="uid://bc6k05hmtth02" path="res://FarmSprites/FarmSprites/sprite_tree19.png" id="20_wa2e5"]
+[ext_resource type="Texture2D" uid="uid://dkks7tcc8gwkd" path="res://FarmSprites/FarmSprites/sprite_tree20.png" id="21_ow1tn"]
+[ext_resource type="Texture2D" uid="uid://da3ntljwtu6w7" path="res://FarmSprites/FarmSprites/sprite_tree21.png" id="22_aj6kw"]
+[ext_resource type="Texture2D" uid="uid://b611glrcui4pb" path="res://FarmSprites/FarmSprites/sprite_tree22.png" id="23_wu1a3"]
+[ext_resource type="Texture2D" uid="uid://bf1jynibrq38y" path="res://FarmSprites/FarmSprites/sprite_tree23.png" id="24_sqhr8"]
+[ext_resource type="Texture2D" uid="uid://52x5qfs3she0" path="res://FarmSprites/FarmSprites/sprite_tree24.png" id="25_yhxf2"]
+
+[sub_resource type="Animation" id="Animation_ag2v5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_cwrvi")]
+}
+
+[sub_resource type="Animation" id="Animation_hadwk"]
+resource_name = "paper_click"
+length = 2.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.70000005, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3, 1.4000001, 1.5, 1.6, 1.7, 1.8000001, 1.9000001, 2, 2.1, 2.2, 2.3000002, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_cwrvi"), ExtResource("2_vk7xk"), ExtResource("3_f3m4x"), ExtResource("4_esa8i"), ExtResource("5_s2yc1"), ExtResource("6_ev7gy"), ExtResource("7_fmwmj"), ExtResource("8_px6ua"), ExtResource("9_jwq3e"), ExtResource("10_sq01i"), ExtResource("11_k42kd"), ExtResource("12_rsunm"), ExtResource("13_nhu1u"), ExtResource("14_a237r"), ExtResource("15_suvxt"), ExtResource("16_3qwv0"), ExtResource("17_xxhua"), ExtResource("18_f7x46"), ExtResource("19_jwy8o"), ExtResource("20_wa2e5"), ExtResource("21_ow1tn"), ExtResource("22_aj6kw"), ExtResource("23_wu1a3"), ExtResource("24_sqhr8"), ExtResource("25_yhxf2"), ExtResource("1_to1lb")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1cn3q"]
+_data = {
+&"RESET": SubResource("Animation_ag2v5"),
+&"paper_click": SubResource("Animation_hadwk")
+}
+
+[node name="botaoPrincipal" type="VBoxContainer" unique_id=726666360]
+script = ExtResource("1_vk7xk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1087780756]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_cwrvi")
+
+[node name="Button" type="Button" parent="." unique_id=1619858715]
+layout_mode = 2
+text = "Estudar"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=875689292]
+libraries/ = SubResource("AnimationLibrary_1cn3q")
+speed_scale = 0.2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
