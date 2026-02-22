@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://cs4p8ddcqm6l5"]
+
+[ext_resource type="PackedScene" uid="uid://iupichumrp0l" path="res://botao_principal.tscn" id="1_0fbet"]
+[ext_resource type="Script" uid="uid://g2c50wbcp2jf" path="res://control.gd" id="1_62e2m"]
+
+[node name="Control" type="Control" unique_id=1529067285]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62e2m")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=597121274]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1963075333]
+layout_mode = 2
+
+[node name="HBoxContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=1740497302]
+layout_mode = 2
+
+[node name="VeloShow_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=158702029]
+layout_mode = 2
+text = "Velocidade: "
+horizontal_alignment = 1
+
+[node name="ExperienciaLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1254169478]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Experiencia: "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=924367494]
+layout_mode = 2
+
+[node name="Velocidade_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=371247170]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Comprar Oculos"
+
+[node name="Velocidade_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=447839919]
+layout_mode = 2
+text = "Leitura mais rápida"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=951916033]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ComprarLivro_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=941352350]
+layout_mode = 2
+text = "Comprar Livro"
+
+[node name="ComprarLivro_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=942312369]
+layout_mode = 2
+text = "Mais um Livro!"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2021268296]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MaisEXP_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3" unique_id=1598600705]
+layout_mode = 2
+text = "Comprar Canetas
+Coloridas"
+
+[node name="MaisEXP_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3" unique_id=1820313473]
+layout_mode = 2
+text = "Deixa tudo mais bonito 
+e organizado!"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=947762184]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Assistente_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4" unique_id=1213905972]
+layout_mode = 2
+text = "Comprar Assistente"
+
+[node name="Assistente_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4" unique_id=506191042]
+layout_mode = 2
+text = "Um amigo pra te ajudar!"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=984755477]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=847638739]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+columns = 8
+
+[node name="botaoPrincipal" parent="MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=726666360 instance=ExtResource("1_0fbet")]
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=478906893]
+autostart = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Velocidade_upg" to="." method="_on_velocidade_upg_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_upg" to="." method="_on_comprar_livro_upg_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_upg" to="." method="_on_mais_exp_upg_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg" to="." method="_on_assistente_upg_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
