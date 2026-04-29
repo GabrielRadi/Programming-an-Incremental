@@ -10,5 +10,8 @@ class_name GameData
 @export var EXP_custo: int = 20
 @export var Assistente_custo: int = 50
 @export var Assistente_AFK_gains: int = 0
+@export var click_time_custo: int = 500
+@export var click_time: int = 0
+
 # ganhos offline abaixo:
 @export var ultimo_login: float = 0.0 
