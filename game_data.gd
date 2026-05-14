@@ -10,8 +10,15 @@ class_name GameData
 @export var EXP_custo: int = 20
 @export var Assistente_custo: int = 50
 @export var Assistente_AFK_gains: int = 0
-@export var click_time_custo: int = 500
-@export var click_time: int = 0
 
-# ganhos offline abaixo:
+# ganhos offline:
 @export var ultimo_login: float = 0.0 
+
+# prestigio:
+@export var nivel_de_prestigio: int = 0
+@export var moedas_prestigio: int = 0
+@export var money_for_prestigio: int = 1000000
+
+# audio e sfx:
+@export var musica: bool = true
+@export var sfx: bool = true

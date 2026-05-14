@@ -4,18 +4,17 @@ extends Control
 @onready var velo_show_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/VeloShow_label
 @onready var velocidade_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Velocidade_upg
 @onready var comprar_livro_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_upg
+@onready var comprar_livro_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_label
 @onready var grid_container: GridContainer = $MarginContainer/VBoxContainer/ScrollContainer/GridContainer
 @onready var mais_exp_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_upg
 @onready var mais_exp_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_label
 @onready var assistente_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg
 @onready var assistente_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_label
-@onready var auto_button_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer5/auto_button_upg
-@onready var auto_button_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer5/auto_button_label
-
 
 const BOTAO_PRINCIPAL = preload("uid://iupichumrp0l")
 
 func _ready() -> void: # função pra carregar os elementos como objetos (botão principal etc)
+	check_status()
 	check_disabled()
 	recarregar_botoes_salvos()
 
@@ -26,9 +25,8 @@ func _process(_delta: float) -> void:
 	comprar_livro_upg.tooltip_text = "Preço: " + str(global.game_data.livros_custo)
 	mais_exp_upg.tooltip_text = "Preço: " + str(global.game_data.EXP_custo)
 	assistente_upg.tooltip_text = "Preço: " + str(global.game_data.Assistente_custo)
-	auto_button_upg.tooltip_text = "Preço: " + str(global.game_data.click_time_custo)
+	global.gain_prestige()
 	# botões e labels
-
 
 func recarregar_botoes_salvos() -> void:
 	for child in grid_container.get_children():
@@ -42,7 +40,62 @@ func check_disabled() -> void: #checa todos os botões pra ver se devem ser desa
 	if global.game_data.velo_estudo >= 4.0:
 		global.game_data.velo_estudo = 4.0
 		velocidade_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
 		velocidade_upg.disabled #funcional
+	if global.game_data.qtd_livros >= 5:
+		global.game_data.qtd_livros = 5
+		comprar_livro_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		comprar_livro_upg.disabled #funcional
+	if global.game_data.ganhos_EXP >= 10:
+		global.game_data.ganhos_EXP = 10
+		mais_exp_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		mais_exp_upg.disabled #funcional
+	if global.game_data.Assistente_AFK_gains >= 15:
+		global.game_data.Assistente_AFK_gains = 15
+		assistente_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		assistente_upg.disabled; #funcional
+
+func check_status() -> void: #checa em qual prestigio o player está
+	match global.game_data.nivel_de_prestigio:
+		0:
+			velocidade_upg.text = "Comprar Oculos"
+			velo_show_label.text = "Leitura mais rápida"
+			comprar_livro_upg.text = "Comprar Livro"
+			comprar_livro_label.text = "Mais um Livro!"
+			mais_exp_upg.text = "Comprar Canetas Coloridas"
+			mais_exp_label.text = "Um amigo para te \n ajudar"
+			assistente_upg.text = "Comprar Assistente"
+			assistente_label.text = "Gerar sem trabalhar!"
+		1:
+			velocidade_upg.text = "Melhorar a digitação"
+			velo_show_label.text = "para poder codar mais rápido!"
+			comprar_livro_upg.text = "Contratar um DEV novo"
+			comprar_livro_label.text = "Mais uma pessoa para te ajudar!"
+			mais_exp_upg.text = "Estudar GDScript"
+			mais_exp_label.text = "Para codar mais rápido! \n... isso não foi muito criativo"
+			assistente_upg.text = "Automatizar o Codigo!"
+			assistente_label.text = "Reutilizar Código é útil!"
+		2:
+			velocidade_upg.text = "Aprender a plantar mais \n rápido!"
+			velo_show_label.text = "Sim, até nisso dá pra melhorar"
+			comprar_livro_upg.text = "Comprar uma área"
+			comprar_livro_label.text = "Para poder plantar mais arvores"
+			mais_exp_upg.text = "Plantar diferentes tipos de arvore"
+			mais_exp_label.text = "Diferentes tipos dão mais dinheiro... \n por alguma razão"
+			assistente_upg.text = "Fazer uma IA que planta sozinha!"
+			assistente_label.text = "Pra quê plantar você mesmo? \n quando a IA faz por você?"
+		3: 
+			velocidade_upg.text = "Comprar Luvas"
+			velo_show_label.text = "para não precisar lavar elas \n toda vez!"
+			comprar_livro_upg.text = "Chamar voluntários"
+			comprar_livro_label.text = "Mais uma pessoa para te ajudar!"
+			mais_exp_upg.text = "Aprender técnicas de coleta"
+			mais_exp_label.text = "Funciona muito bem!"
+			assistente_upg.text = "Jogar Redes de Coleta!"
+			assistente_label.text = "Coletar lixo de lagos assim é \n surpreendentemente funcional!"
 
 func _on_velocidade_upg_pressed() -> void: # Velocidade da Animação
 	check_disabled()
@@ -55,10 +108,13 @@ func _on_velocidade_upg_pressed() -> void: # Velocidade da Animação
 		global.save_data()
 
 func _on_comprar_livro_upg_pressed() -> void: # Adicionar mais um botão (objeto classe botao_principal.gd)
-	if global.game_data.money >= global.game_data.livros_custo:
+	check_disabled()
+	if global.game_data.qtd_livros >= 5:
+		comprar_livro_upg.text = "Maximizado!"
+	elif global.game_data.money >= global.game_data.livros_custo:
 		global.game_data.money -= global.game_data.livros_custo
 		global.game_data.qtd_livros += 1
-		global.game_data.livros_custo += int(round(global.game_data.livros_custo * 2))
+		global.game_data.livros_custo += int(round(global.game_data.livros_custo * 0.8))
 		
 		var novo_botao = BOTAO_PRINCIPAL.instantiate()
 		grid_container.add_child(novo_botao)
@@ -66,29 +122,35 @@ func _on_comprar_livro_upg_pressed() -> void: # Adicionar mais um botão (objeto
 		global.save_data()
 
 func _on_mais_exp_upg_pressed() -> void: # Ganho de Experiencia/Dinheiro
-	if global.game_data.money >= global.game_data.EXP_custo:
+	check_disabled()
+	if global.game_data.ganhos_EXP >= 10:
+		mais_exp_upg.text = "Maximizado!"
+	elif global.game_data.money >= global.game_data.EXP_custo:
 		global.game_data.money -= global.game_data.EXP_custo
-		global.game_data.ganhos_EXP *= 2
-		global.game_data.EXP_custo += int(round(global.game_data.EXP_custo * 2))
+		global.game_data.ganhos_EXP += 1
+		global.game_data.EXP_custo += int(round(global.game_data.EXP_custo * 1.7))
 		global.save_data()
 
 func _on_assistente_upg_pressed() -> void: # ganhos AFK
-	if global.game_data.money >= global.game_data.Assistente_custo:
+	check_disabled()
+	if global.game_data.Assistente_AFK_gains >= 15:
+		assistente_upg.text = "Maximizado!"
+	elif global.game_data.money >= global.game_data.Assistente_custo:
+		print(global.game_data.Assistente_AFK_gains)
 		global.game_data.money -= global.game_data.Assistente_custo
 		if global.game_data.Assistente_AFK_gains > 10:
 			global.game_data.Assistente_AFK_gains += 2
 		else: global.game_data.Assistente_AFK_gains += 1
-		global.game_data.Assistente_custo += int(round(global.game_data.Assistente_custo * 5))
+		global.game_data.Assistente_custo += int(round(global.game_data.Assistente_custo * 1.5))
 		global.save_data()
-
-func _on_auto_button_upg_pressed() -> void:
-	if global.game_data.money >= global.game_data.click_time_custo && global.game_data.click_time <= 8:
-		global.game_data.money -= global.game_data.click_time_custo
-		global.game_data.click_time += 1
-		print("teste inicial")
-# quando passar nos testes, adicionar aumento de preço de 5x
-		print("teste se passou")
-
 
 func _on_timer_timeout() -> void:
 	global.game_data.money += global.game_data.Assistente_AFK_gains
+
+func _on_prestige_button_pressed() -> void:
+	global.save_data()
+	get_tree().change_scene_to_file("res://control_prestige.tscn")
+
+func _on_leave_button_pressed() -> void:
+	global.save_data()
+	get_tree().change_scene_to_file("res://menu.tscn")

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b3ky81cw38g1r"]
+
+[ext_resource type="Script" uid="uid://3ni1ngr1ex0f" path="res://control_prestige.gd" id="1_mrfx6"]
+
+[node name="Control" type="Control" unique_id=2061822227]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mrfx6")
+
+[node name="Prestige_back_Button" type="Button" parent="." unique_id=348182609]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 26.0
+offset_right = 180.0
+offset_bottom = 57.0
+size_flags_vertical = 10
+text = "Voltar"
+
+[node name="prestige_qtd_label" type="Label" parent="." unique_id=2053906406]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.5
+offset_right = 57.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Certificados:"
+uppercase = true
+
+[node name="Prestigio_button" type="Button" parent="." unique_id=487415716]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 586.0
+offset_right = 180.0
+offset_bottom = 617.0
+text = "CRIAR NOVO JOGO"
+
+[connection signal="pressed" from="Prestige_back_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Prestige_back_Button" to="." method="_on_prestige_back_button_pressed"]
+[connection signal="pressed" from="Prestigio_button" to="." method="_on_prestigio_button_pressed"]

@@ -27,7 +27,31 @@ func offline_money() -> void:
 	if ganhos_afk > 0:
 		@warning_ignore("narrowing_conversion")
 		game_data.money += ganhos_afk
-		
+
+func gain_prestige() -> void:
+	if (game_data.money >= game_data.money_for_prestigio):
+		game_data.moedas_prestigio += 1
+		game_data.money_for_prestigio *= 1.3
+		save_data()
+
+func prestigio() -> void:
+	game_data.money = 0
+	game_data.velo_estudo = 0.2
+	game_data.velocidade_custo = 5
+	game_data.qtd_livros = 1 
+	game_data.livros_custo = 10
+	game_data.ganhos_EXP = 1
+	game_data.EXP_custo = 20
+	game_data.Assistente_custo = 50
+	game_data.Assistente_AFK_gains = 0
+	if (game_data.nivel_de_prestigio < 1):
+		game_data.nivel_de_prestigio += 1
+		save_data()
+	if (game_data.nivel_de_prestigio >= 1):
+		print("adicionar seletor de prestigio")
+		# 2 -> plantar arvores / 3 -> coletar lixo do lago
+		save_data()
+
 func format(valor: float) -> String:
 	if valor < 1000:
 		return str(floor(valor)) # in-game: 950
