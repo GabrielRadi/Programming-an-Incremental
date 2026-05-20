@@ -8,7 +8,6 @@ var estado_botao_principal = 0 # 0 = inativo, 1 = em coleta
 func _on_button_pressed() -> void:
 	if anim_paper:
 		anim_paper.speed_scale = global.game_data.velo_estudo
-	
 	if estado_botao_principal == 0:
 		if anim_paper: anim_paper.play("paper_click")
 		button.text = "estudando..." 

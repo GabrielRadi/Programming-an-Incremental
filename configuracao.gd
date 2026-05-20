@@ -26,6 +26,12 @@ func _on_apagar_dados_button_pressed() -> void:
 	global.game_data.nivel_de_prestigio = 0
 	global.game_data.moedas_prestigio = 0
 	global.game_data.money_for_prestigio = 1000000
+	global.game_data.p1 = false
+	global.game_data.p2 = false
+	global.game_data.p3 = false
+	global.game_data.p4 = false
+	global.game_data.p5 = false
+	global.game_data.p6 = false
 	global.save_data()
 
 func _on_voltar_button_pressed() -> void:

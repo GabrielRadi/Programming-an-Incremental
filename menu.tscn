@@ -46,5 +46,10 @@ layout_mode = 2
 size_flags_vertical = 4
 text = "CONFIGURAÇÕES"
 
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=632705033]
+layout_mode = 2
+text = "SAIR"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ConfButton" to="." method="_on_conf_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,6 +1,7 @@
 extends Resource
 class_name GameData
 
+# variaveis do jogo principal
 @export var money: int = 0
 @export var velo_estudo: float = 0.2
 @export var velocidade_custo: int = 5
@@ -18,6 +19,12 @@ class_name GameData
 @export var nivel_de_prestigio: int = 0
 @export var moedas_prestigio: int = 0
 @export var money_for_prestigio: int = 1000000
+@export var p1: bool = false
+@export var p2: bool = false
+@export var p3: bool = false
+@export var p4: bool = false
+@export var p5: bool = false
+@export var p6: bool = false
 
 # audio e sfx:
 @export var musica: bool = true

@@ -37,23 +37,46 @@ func recarregar_botoes_salvos() -> void:
 		grid_container.add_child(novo_botao)
 
 func check_disabled() -> void: #checa todos os botões pra ver se devem ser desativados
-	if global.game_data.velo_estudo >= 4.0:
+	if global.game_data.velo_estudo >= 4.0 && !global.game_data.p1:
 		global.game_data.velo_estudo = 4.0
 		velocidade_upg.text = "Maximizado!"
 		@warning_ignore("standalone_expression")
 		velocidade_upg.disabled #funcional
-	if global.game_data.qtd_livros >= 5:
+	elif global.game_data.velo_estudo >= 8.0 && global.game_data.p1:
+		global.game_data.velo_estudo = 8.0 # ELIF relacionado ao Prestigio 1
+		velocidade_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		velocidade_upg.disabled #funcional
+		
+	if global.game_data.qtd_livros >= 5 && !global.game_data.p1:
 		global.game_data.qtd_livros = 5
 		comprar_livro_upg.text = "Maximizado!"
 		@warning_ignore("standalone_expression")
 		comprar_livro_upg.disabled #funcional
-	if global.game_data.ganhos_EXP >= 10:
+	elif global.game_data.qtd_livros >= 10 && global.game_data.p1:
+		global.game_data.qtd_livros = 10
+		comprar_livro_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		comprar_livro_upg.disabled #funcional
+
+	if global.game_data.ganhos_EXP >= 10 && !global.game_data.p1:
 		global.game_data.ganhos_EXP = 10
 		mais_exp_upg.text = "Maximizado!"
 		@warning_ignore("standalone_expression")
 		mais_exp_upg.disabled #funcional
-	if global.game_data.Assistente_AFK_gains >= 15:
+	elif global.game_data.ganhos_EXP >= 20 && global.game_data.p1:
+		global.game_data.ganhos_EXP = 20
+		mais_exp_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		mais_exp_upg.disabled #funcional
+
+	if global.game_data.Assistente_AFK_gains >= 15 && !global.game_data.p1:
 		global.game_data.Assistente_AFK_gains = 15
+		assistente_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		assistente_upg.disabled; #funcional
+	elif global.game_data.Assistente_AFK_gains >= 30 && global.game_data.p1:
+		global.game_data.Assistente_AFK_gains = 30
 		assistente_upg.text = "Maximizado!"
 		@warning_ignore("standalone_expression")
 		assistente_upg.disabled; #funcional
@@ -103,47 +126,55 @@ func _on_velocidade_upg_pressed() -> void: # Velocidade da Animação
 		velocidade_upg.tooltip_text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.velocidade_custo:
 		global.game_data.money -= global.game_data.velocidade_custo
-		global.game_data.velo_estudo += 0.2
+		if global.game_data.p1:
+			global.game_data.velo_estudo += 0.5
+		else: global.game_data.velo_estudo += 0.2
 		global.game_data.velocidade_custo += int(round(global.game_data.velocidade_custo * 0.5))
 		global.save_data()
-
+# p1 completo
 func _on_comprar_livro_upg_pressed() -> void: # Adicionar mais um botão (objeto classe botao_principal.gd)
-	check_disabled()
-	if global.game_data.qtd_livros >= 5:
+	check_disabled() # Prestigio Feito no P1 pronto
+	if global.game_data.p1 && global.game_data.qtd_livros >= 10:
+		comprar_livro_upg.text = "Maximizado!"
+	elif global.game_data.qtd_livros >= 5 && !global.game_data.p1:
 		comprar_livro_upg.text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.livros_custo:
 		global.game_data.money -= global.game_data.livros_custo
-		global.game_data.qtd_livros += 1
-		global.game_data.livros_custo += int(round(global.game_data.livros_custo * 0.8))
+		global.game_data.qtd_livros += 1 # if abaixo para caso a pessoa tenha o primeiro prestigio liberado, o preço aumenta de forma menor, deixando mais barato
+		if global.game_data.p1: global.game_data.livros_custo += int(round(global.game_data.livros_custo * 0.4))
+		else: global.game_data.livros_custo += int(round(global.game_data.livros_custo * 0.8))
 		
 		var novo_botao = BOTAO_PRINCIPAL.instantiate()
 		grid_container.add_child(novo_botao)
 		
 		global.save_data()
-
+# p1 completo
 func _on_mais_exp_upg_pressed() -> void: # Ganho de Experiencia/Dinheiro
 	check_disabled()
-	if global.game_data.ganhos_EXP >= 10:
+	if global.game_data.ganhos_EXP >= 20 && global.game_data.p1:
+		mais_exp_upg.text = "Maximizado!"
+	elif global.game_data.ganhos_EXP >= 10 && !global.game_data.p1:
 		mais_exp_upg.text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.EXP_custo:
 		global.game_data.money -= global.game_data.EXP_custo
-		global.game_data.ganhos_EXP += 1
+		if global.game_data.p1: global.game_data.ganhos_EXP += 2 # se tiver prestigio, terá um aumento maior por cada nivel
+		else: global.game_data.ganhos_EXP += 1 # caso contrario, nivel normal
 		global.game_data.EXP_custo += int(round(global.game_data.EXP_custo * 1.7))
 		global.save_data()
-
+# p1 completo
 func _on_assistente_upg_pressed() -> void: # ganhos AFK
 	check_disabled()
-	if global.game_data.Assistente_AFK_gains >= 15:
+	if global.game_data.Assistente_AFK_gains >= 30 && global.game_data.p1:
+		assistente_upg.text = "Maximizado!"
+	elif global.game_data.Assistente_AFK_gains >= 15 && !global.game_data.p1:
 		assistente_upg.text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.Assistente_custo:
-		print(global.game_data.Assistente_AFK_gains)
 		global.game_data.money -= global.game_data.Assistente_custo
-		if global.game_data.Assistente_AFK_gains > 10:
-			global.game_data.Assistente_AFK_gains += 2
+		if global.game_data.p1: global.game_data.Assistente_AFK_gains += 2 # se tiver prestigio 1, ganha o dobro de ganhos afk por nivel
 		else: global.game_data.Assistente_AFK_gains += 1
 		global.game_data.Assistente_custo += int(round(global.game_data.Assistente_custo * 1.5))
 		global.save_data()
-
+# p1 completo
 func _on_timer_timeout() -> void:
 	global.game_data.money += global.game_data.Assistente_AFK_gains
 
