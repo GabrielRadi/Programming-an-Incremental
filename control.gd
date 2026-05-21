@@ -127,11 +127,12 @@ func _on_velocidade_upg_pressed() -> void: # Velocidade da Animação
 	elif global.game_data.money >= global.game_data.velocidade_custo:
 		global.game_data.money -= global.game_data.velocidade_custo
 		if global.game_data.p1:
-			global.game_data.velo_estudo += 0.5
+			global.game_data.velo_estudo += 0.4
 		else: global.game_data.velo_estudo += 0.2
 		global.game_data.velocidade_custo += int(round(global.game_data.velocidade_custo * 0.5))
 		global.save_data()
 # p1 completo
+# p2 completo
 func _on_comprar_livro_upg_pressed() -> void: # Adicionar mais um botão (objeto classe botao_principal.gd)
 	check_disabled() # Prestigio Feito no P1 pronto
 	if global.game_data.p1 && global.game_data.qtd_livros >= 10:
@@ -170,7 +171,8 @@ func _on_assistente_upg_pressed() -> void: # ganhos AFK
 		assistente_upg.text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.Assistente_custo:
 		global.game_data.money -= global.game_data.Assistente_custo
-		if global.game_data.p1: global.game_data.Assistente_AFK_gains += 2 # se tiver prestigio 1, ganha o dobro de ganhos afk por nivel
+		if global.game_data.p1 && !global.game_data.p5: global.game_data.Assistente_AFK_gains += 2 # se tiver prestigio 1, ganha o dobro de ganhos afk por nivel
+		elif global.game_data.p5: global.game_data.Assistente_AFK_gains *= 1.5
 		else: global.game_data.Assistente_AFK_gains += 1
 		global.game_data.Assistente_custo += int(round(global.game_data.Assistente_custo * 1.5))
 		global.save_data()
