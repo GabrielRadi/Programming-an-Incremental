@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cln86aiujnqmm"
+path="res://.godot/imported/risada maligna.mp3-09f57b6d4c6b7dd8c4be3f032dbc91ed.mp3str"
+
+[deps]
+
+source_file="res://Sfx/risada maligna.mp3"
+dest_files=["res://.godot/imported/risada maligna.mp3-09f57b6d4c6b7dd8c4be3f032dbc91ed.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
