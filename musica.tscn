@@ -12,3 +12,6 @@ grow_vertical = 2
 script = ExtResource("1_u4ygf")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1934715377]
+
+[node name="SfxStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1513871727]
+bus = &"SFX"

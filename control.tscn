@@ -118,10 +118,16 @@ layout_mode = 2
 [node name="AFKtimer" type="Timer" parent="." unique_id=478906893]
 autostart = true
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Prestige_Button" to="." method="_on_prestige_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Prestige_Button" to="." method="_on_prestige_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Leave_Button" to="." method="_on_leave_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Leave_Button" to="." method="_on_leave_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Velocidade_upg" to="." method="_on_velocidade_upg_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Velocidade_upg" to="." method="_on_velocidade_upg_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_upg" to="." method="_on_comprar_livro_upg_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_upg" to="." method="_on_comprar_livro_upg_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_upg" to="." method="_on_mais_exp_upg_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_upg" to="." method="_on_mais_exp_upg_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg" to="." method="_on_assistente_upg_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg" to="." method="_on_assistente_upg_pressed"]
 [connection signal="timeout" from="AFKtimer" to="." method="_on_timer_timeout"]

@@ -50,6 +50,9 @@ text = "CONFIGURAÇÕES"
 layout_mode = 2
 text = "SAIR"
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ConfButton" to="." method="_on_conf_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ConfButton" to="." method="_on_conf_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

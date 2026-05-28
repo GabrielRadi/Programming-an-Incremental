@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 global="*uid://c8bwagfqgqn01"
 Musica="*uid://2koevr14l1ic"
+SfxStreamPlayer="*uid://2koevr14l1ic"
 
 [physics]
 

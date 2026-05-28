@@ -28,6 +28,7 @@ func _on_p_1_button_pressed() -> void:
 		ja_possui()
 	elif global.game_data.moedas_prestigio >= 1:
 		global.game_data.moedas_prestigio -= 1
+		Musica.play_SFX(Musica.buy)
 		global.game_data.p1 = true
 		check_disabled()
 		global.save_data()
@@ -39,6 +40,7 @@ func _on_p_2_button_pressed() -> void:
 	elif !global.game_data.p1: no_upg()
 	elif global.game_data.moedas_prestigio < 5: no_certificates()
 	elif global.game_data.moedas_prestigio >= 5:
+		Musica.play_SFX(Musica.buy)
 		global.game_data.moedas_prestigio -= 5
 		global.game_data.p2 = true
 		check_disabled()
@@ -50,6 +52,7 @@ func _on_p_3_button_pressed() -> void:
 	elif !global.game_data.p1: no_upg()
 	elif global.game_data.moedas_prestigio < 15: no_certificates()
 	elif global.game_data.moedas_prestigio >= 15:
+		Musica.play_SFX(Musica.buy)
 		global.game_data.moedas_prestigio -= 15
 		global.game_data.p3 = true
 		check_disabled()
@@ -61,6 +64,7 @@ func _on_p_4_button_pressed() -> void:
 	elif !global.game_data.p2 or !global.game_data.p3: no_upg()
 	elif global.game_data.moedas_prestigio < 30: no_certificates()
 	elif global.game_data.moedas_prestigio >= 30:
+		Musica.play_SFX(Musica.buy)
 		global.game_data.moedas_prestigio -= 30
 		global.game_data.p4 = true
 		check_disabled()
@@ -72,6 +76,7 @@ func _on_p_5_button_pressed() -> void:
 	elif !global.game_data.p2 or !global.game_data.p3: no_upg()
 	elif global.game_data.moedas_prestigio < 60: no_certificates()
 	elif global.game_data.moedas_prestigio >= 60:
+		Musica.play_SFX(Musica.buy)
 		global.game_data.moedas_prestigio -= 60
 		global.game_data.p5 = true
 		check_disabled()
@@ -83,6 +88,7 @@ func _on_end_game_button_pressed() -> void:
 	elif !global.game_data.p5: no_upg()
 	elif global.game_data.moedas_prestigio < 120: no_certificates()
 	elif global.game_data.moedas_prestigio >= 120:
+		Musica.play_SFX(Musica.buy)
 		global.game_data.moedas_prestigio -= 120
 		global.game_data.p6 = true
 		check_disabled()
@@ -94,6 +100,7 @@ func _on_prestige_back_button_pressed() -> void:
 
 func _on_prestigio_button_pressed() -> void:
 	if (global.game_data.p1):
+		Musica.play_SFX(Musica.prestige)
 		global.prestigio()
 		global.save_data()
 	else: 
@@ -138,3 +145,29 @@ func check_disabled() -> void:
 	if global.game_data.p6: 
 		end_game_button.disabled
 		end_game_button.text = "Meus Parabéns\nVocê Finalizou o Jogo!"
+
+# SFX de botões (hover)
+
+func _on_prestigio_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_p_1_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_p_2_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_p_3_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_p_4_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_p_5_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_prestige_back_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_end_game_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.load_complete)

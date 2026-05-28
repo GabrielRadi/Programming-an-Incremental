@@ -38,14 +38,17 @@ text = "MÚSICA: ATIVADO"
 [node name="sfx_config_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=736033608]
 layout_mode = 2
 size_flags_vertical = 0
-text = "SFX: ATIVADO"
 
 [node name="apagar_dados_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1898269383]
 layout_mode = 2
 size_flags_vertical = 4
 text = "RESETAR DADOS"
 
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/voltar_button" to="." method="_on_voltar_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/voltar_button" to="." method="_on_voltar_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/musica_config_button" to="." method="_on_musica_config_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/musica_config_button" to="." method="_on_musica_config_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/sfx_config_button" to="." method="_on_sfx_config_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/sfx_config_button" to="." method="_on_sfx_config_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/apagar_dados_button" to="." method="_on_apagar_dados_button_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/apagar_dados_button" to="." method="_on_apagar_dados_button_pressed"]

@@ -10,9 +10,11 @@ func _on_button_pressed() -> void:
 		anim_paper.speed_scale = global.game_data.velo_estudo
 	if estado_botao_principal == 0:
 		if anim_paper: anim_paper.play("paper_click")
+		Musica.play_SFX(Musica.botao_principal_sfx)
 		button.text = "estudando..." 
 		button.disabled = true
 	elif estado_botao_principal == 1:
+		Musica.play_SFX(Musica.botao_principal_sfx)
 		global.game_data.money += global.game_data.ganhos_EXP
 		button.text = "Estudar"
 		estado_botao_principal = 0

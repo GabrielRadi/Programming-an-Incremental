@@ -37,17 +37,16 @@ func recarregar_botoes_salvos() -> void:
 		grid_container.add_child(novo_botao)
 
 func check_disabled() -> void: #checa todos os botões pra ver se devem ser desativados
-	if global.game_data.velo_estudo >= 4.0 && !global.game_data.p1:
-		global.game_data.velo_estudo = 4.0
-		velocidade_upg.text = "Maximizado!"
-		@warning_ignore("standalone_expression")
-		velocidade_upg.disabled #funcional
-	elif global.game_data.velo_estudo >= 8.0 && global.game_data.p1:
+	if global.game_data.velo_estudo >= 8.0 && global.game_data.p1:
 		global.game_data.velo_estudo = 8.0 # ELIF relacionado ao Prestigio 1
 		velocidade_upg.text = "Maximizado!"
 		@warning_ignore("standalone_expression")
 		velocidade_upg.disabled #funcional
-		
+	elif global.game_data.velo_estudo >= 4.0 && !global.game_data.p1:
+		global.game_data.velo_estudo = 4.0
+		velocidade_upg.text = "Maximizado!"
+		@warning_ignore("standalone_expression")
+		velocidade_upg.disabled #funcional
 	if global.game_data.qtd_livros >= 5 && !global.game_data.p1:
 		global.game_data.qtd_livros = 5
 		comprar_livro_upg.text = "Maximizado!"
@@ -122,10 +121,11 @@ func check_status() -> void: #checa em qual prestigio o player está
 
 func _on_velocidade_upg_pressed() -> void: # Velocidade da Animação
 	check_disabled()
-	if global.game_data.velo_estudo >= 4.0:
+	if global.game_data.velo_estudo >= 4.0 && !global.game_data.p1:
 		velocidade_upg.tooltip_text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.velocidade_custo:
 		global.game_data.money -= global.game_data.velocidade_custo
+		Musica.play_SFX(Musica.upgrade)
 		if global.game_data.p1:
 			global.game_data.velo_estudo += 0.4
 		else: global.game_data.velo_estudo += 0.2
@@ -140,6 +140,7 @@ func _on_comprar_livro_upg_pressed() -> void: # Adicionar mais um botão (objeto
 	elif global.game_data.qtd_livros >= 5 && !global.game_data.p1:
 		comprar_livro_upg.text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.livros_custo:
+		Musica.play_SFX(Musica.upgrade)
 		global.game_data.money -= global.game_data.livros_custo
 		global.game_data.qtd_livros += 1 # if abaixo para caso a pessoa tenha o primeiro prestigio liberado, o preço aumenta de forma menor, deixando mais barato
 		if global.game_data.p1: global.game_data.livros_custo += int(round(global.game_data.livros_custo * 0.4))
@@ -157,6 +158,7 @@ func _on_mais_exp_upg_pressed() -> void: # Ganho de Experiencia/Dinheiro
 	elif global.game_data.ganhos_EXP >= 10 && !global.game_data.p1:
 		mais_exp_upg.text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.EXP_custo:
+		Musica.play_SFX(Musica.upgrade)
 		global.game_data.money -= global.game_data.EXP_custo
 		if global.game_data.p1: global.game_data.ganhos_EXP += 2 # se tiver prestigio, terá um aumento maior por cada nivel
 		else: global.game_data.ganhos_EXP += 1 # caso contrario, nivel normal
@@ -170,6 +172,7 @@ func _on_assistente_upg_pressed() -> void: # ganhos AFK
 	elif global.game_data.Assistente_AFK_gains >= 15 && !global.game_data.p1:
 		assistente_upg.text = "Maximizado!"
 	elif global.game_data.money >= global.game_data.Assistente_custo:
+		Musica.play_SFX(Musica.upgrade)
 		global.game_data.money -= global.game_data.Assistente_custo
 		if global.game_data.p1 && !global.game_data.p5: global.game_data.Assistente_AFK_gains += 2 # se tiver prestigio 1, ganha o dobro de ganhos afk por nivel
 		elif global.game_data.p5: global.game_data.Assistente_AFK_gains *= 1.5
@@ -182,8 +185,29 @@ func _on_timer_timeout() -> void:
 
 func _on_prestige_button_pressed() -> void:
 	global.save_data()
+	Musica.play_SFX(Musica.menu_up)
 	get_tree().change_scene_to_file("res://control_prestige.tscn")
 
 func _on_leave_button_pressed() -> void:
 	global.save_data()
 	get_tree().change_scene_to_file("res://menu.tscn")
+
+# Sons de Hover do Mouse
+
+func _on_velocidade_upg_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_comprar_livro_upg_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_mais_exp_upg_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_assistente_upg_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_leave_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
+
+func _on_prestige_button_mouse_entered() -> void:
+	Musica.play_SFX(Musica.hover)
