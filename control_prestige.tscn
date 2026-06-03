@@ -41,35 +41,40 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Comprar um
-Notebook"
+Notebook
+(1 Certificado)"
 
 [node name="p2_button" type="Button" parent="VBoxContainer" unique_id=1204746791]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Aprender
-GDScript"
+GDScript
+(5 Certificados)"
 
 [node name="p3_button" type="Button" parent="VBoxContainer" unique_id=1957969452]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Aprender
-Design"
+Design
+(15 Certificados)"
 
 [node name="p4_button" type="Button" parent="VBoxContainer" unique_id=1631927174]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Estudar a
-Natureza"
+Natureza
+(30 Certificados)"
 
 [node name="p5_button" type="Button" parent="VBoxContainer" unique_id=1874833107]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Aprender Coleta
-De Lixo"
+De Lixo
+(60 Certificados)"
 
 [node name="NoP1WarningLabel" type="Label" parent="VBoxContainer" unique_id=673019851]
 layout_mode = 2
@@ -99,7 +104,8 @@ text = "Voltar"
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 10
-text = "Se Formar!"
+text = "Se Formar!
+{120 Certificados}"
 
 [node name="Timer" type="Timer" parent="." unique_id=1961763895]
 wait_time = 3.0

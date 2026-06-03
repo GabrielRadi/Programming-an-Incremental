@@ -1,6 +1,9 @@
 extends VBoxContainer
 
 @onready var anim_paper: AnimationPlayer = $AnimationPlayer
+@onready var anim_tree: AnimationPlayer = $AnimationPlayer2
+@onready var anim_trash: AnimationPlayer = $AnimationPlayer2/AnimationPlayer3
+
 @onready var button: Button = $Button
 
 var estado_botao_principal = 0 # 0 = inativo, 1 = em coleta

@@ -57,18 +57,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Velocidade_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=371247170]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Oculos       "
 
 [node name="Velocidade_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=447839919]
 layout_mode = 2
-text = "Leitura mais rápida"
+text = "Deixa o Botão mais rápido"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=951916033]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 
 [node name="ComprarLivro_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=941352350]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Livro          "
 
@@ -81,6 +83,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 
 [node name="MaisEXP_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3" unique_id=1598600705]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Canetas 
 Coloridas                   "
@@ -95,6 +98,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 
 [node name="Assistente_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4" unique_id=1213905972]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Assistente"
 

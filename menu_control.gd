@@ -11,12 +11,10 @@ func _on_start_button_pressed() -> void:
 	Musica.play_SFX(Musica.START)
 	get_tree().change_scene_to_file("res://control.tscn")
 
-
 func _on_conf_button_pressed() -> void:
 	Musica.play_SFX(Musica.menu_up)
 	var config = conf.instantiate()
 	add_child(config)
-
 
 func _on_quit_button_pressed() -> void:
 	Musica.play_SFX(Musica.menu_up)

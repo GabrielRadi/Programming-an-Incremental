@@ -1,8 +1,8 @@
 extends Node
 
 var save_path = "user://savegame.tres"
-
 var game_data: GameData
+var escolha_prestigio = preload("uid://cxyimjlog4jq7")
 
 func _ready() -> void:
 	load_data()
@@ -59,11 +59,10 @@ func prestigio() -> void:
 		game_data.nivel_de_prestigio += 1
 		get_tree().change_scene_to_file("res://control.tscn")
 		save_data()
-	if (game_data.nivel_de_prestigio >= 1 && global.game_data.p2):
-		game_data.nivel_de_prestigio += 1
-		if game_data.nivel_de_prestigio > 4:
-			game_data.nivel_de_prestigio = 4
-		# 2 -> plantar arvores / 3 -> coletar lixo do lago
+	if (game_data.p4):
+		get_tree().change_scene_to_file("res://escolha_de_ODS.tscn")
+		save_data()
+	else:
 		get_tree().change_scene_to_file("res://control.tscn")
 		save_data()
 

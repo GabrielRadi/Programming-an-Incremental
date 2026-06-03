@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cxyimjlog4jq7"]
+
+[ext_resource type="Script" uid="uid://ddexn2u8r30pc" path="res://escolha_de_ods.gd" id="1_rb0s3"]
+
+[node name="Control" type="Control" unique_id=345742898]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rb0s3")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1675642444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2140123274]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="texto mutavel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1514068692]
+layout_mode = 2
+text = "TEXT_UTIL"
+horizontal_alignment = 1
+
+[node name="ODS_12 (Lixo)" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1899964439]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "ODS 12: Consumo e
+ Produção Responsáveis"
+
+[node name="ODS_15(Reflorestamento)" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1914102936]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+size_flags_vertical = 4
+text = "ODS 15: Vida Terrestre"
+
+[node name="Timer" type="Timer" parent="." unique_id=1932509281]
+wait_time = 3.0
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ODS_12 (Lixo)" to="." method="_on_ods_12_lixo_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ODS_12 (Lixo)" to="." method="_on_ods_12_lixo_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ODS_15(Reflorestamento)" to="." method="_on_ods_15_reflorestamento_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ODS_15(Reflorestamento)" to="." method="_on_ods_15_reflorestamento_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
