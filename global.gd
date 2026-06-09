@@ -2,7 +2,6 @@ extends Node
 
 var save_path = "user://savegame.tres"
 var game_data: GameData
-var escolha_prestigio = preload("uid://cxyimjlog4jq7")
 
 func _ready() -> void:
 	load_data()
@@ -56,7 +55,7 @@ func prestigio() -> void:
 	if game_data.p5: game_data.Assistente_AFK_gains = 2
 	else: game_data.Assistente_AFK_gains = 0
 	if (game_data.nivel_de_prestigio < 1 && global.game_data.p1):
-		game_data.nivel_de_prestigio += 1
+		game_data.nivel_de_prestigio = 1
 		get_tree().change_scene_to_file("res://control.tscn")
 		save_data()
 	if (game_data.p4):

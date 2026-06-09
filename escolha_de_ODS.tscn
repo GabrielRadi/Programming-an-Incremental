@@ -29,23 +29,23 @@ layout_mode = 2
 text = "TEXT_UTIL"
 horizontal_alignment = 1
 
-[node name="ODS_12 (Lixo)" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1899964439]
-custom_minimum_size = Vector2(300, 100)
-layout_mode = 2
-text = "ODS 12: Consumo e
- Produção Responsáveis"
-
 [node name="ODS_15(Reflorestamento)" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1914102936]
 custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_vertical = 4
 text = "ODS 15: Vida Terrestre"
 
+[node name="ODS_12 (Lixo)" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1899964439]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 2
+text = "ODS 12: Consumo e
+ Produção Responsáveis"
+
 [node name="Timer" type="Timer" parent="." unique_id=1932509281]
 wait_time = 3.0
 
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ODS_12 (Lixo)" to="." method="_on_ods_12_lixo_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/ODS_12 (Lixo)" to="." method="_on_ods_12_lixo_pressed"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ODS_15(Reflorestamento)" to="." method="_on_ods_15_reflorestamento_mouse_entered"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ODS_15(Reflorestamento)" to="." method="_on_ods_15_reflorestamento_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ODS_12 (Lixo)" to="." method="_on_ods_12_lixo_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ODS_12 (Lixo)" to="." method="_on_ods_12_lixo_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

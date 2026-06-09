@@ -13,10 +13,14 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_ods_15_reflorestamento_pressed() -> void:
-	Musica.play_SFX(Musica.START)
-	get_tree().change_scene_to_file("res://control.tscn")
-	global.game_data.nivel_de_prestigio = 2
-	global.save_data()
+	if !global.game_data.p4:
+		texto_mutavel.text = "Você precisa do upgrade\n'Estudar a Natureza'"
+		timer.start()
+	else:
+		Musica.play_SFX(Musica.START)
+		get_tree().change_scene_to_file("res://control.tscn")
+		global.game_data.nivel_de_prestigio = 2
+		global.save_data()
 
 func _on_ods_12_lixo_pressed() -> void:
 	if !global.game_data.p5:
