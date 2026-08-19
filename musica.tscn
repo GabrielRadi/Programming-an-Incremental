@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://2koevr14l1ic"]
+
+[ext_resource type="Script" uid="uid://cgrykbu3ca0sp" path="res://musica.gd" id="1_u4ygf"]
+
+[node name="Control" type="Control" unique_id=636185772]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4ygf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1934715377]
+
+[node name="SfxStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1513871727]
+bus = &"SFX"

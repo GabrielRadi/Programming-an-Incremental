@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://m7ob5wd3ut1c"]
+
+[ext_resource type="Script" uid="uid://bb25uiml8u5ld" path="res://menu_control.gd" id="1_lti8b"]
+
+[node name="Control" type="Control" unique_id=103062199]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1881118153]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1948287684]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=47469501]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=439396900]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1207828546]
+layout_mode = 2
+size_flags_vertical = 10
+text = "INICIAR JOGO!"
+
+[node name="ConfButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1864020373]
+layout_mode = 2
+size_flags_vertical = 4
+text = "CONFIGURAÇÕES"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=632705033]
+layout_mode = 2
+text = "SAIR"
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ConfButton" to="." method="_on_conf_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ConfButton" to="." method="_on_conf_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

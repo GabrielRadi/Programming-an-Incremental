@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://utii72vnpcn7"]
+
+[ext_resource type="Script" uid="uid://b8dv30xyoy8fd" path="res://configuracao.gd" id="1_jdi43"]
+
+[node name="Control" type="Control" unique_id=277386637]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jdi43")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1456838068]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_right = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1217948580]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="voltar_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=330322575]
+layout_mode = 2
+text = "VOLTAR	"
+
+[node name="musica_config_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1692109445]
+layout_mode = 2
+size_flags_vertical = 4
+text = "MÚSICA: ATIVADO"
+
+[node name="sfx_config_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=736033608]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="apagar_dados_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1898269383]
+layout_mode = 2
+size_flags_vertical = 4
+text = "RESETAR DADOS"
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/voltar_button" to="." method="_on_voltar_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/voltar_button" to="." method="_on_voltar_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/musica_config_button" to="." method="_on_musica_config_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/musica_config_button" to="." method="_on_musica_config_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/sfx_config_button" to="." method="_on_sfx_config_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/sfx_config_button" to="." method="_on_sfx_config_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/apagar_dados_button" to="." method="_on_apagar_dados_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/apagar_dados_button" to="." method="_on_apagar_dados_button_pressed"]

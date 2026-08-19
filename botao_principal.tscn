@@ -43,6 +43,12 @@ tracks/0/keys = {
 "values": [ExtResource("1_cwrvi")]
 }
 
+[sub_resource type="Animation" id="Animation_vk7xk"]
+resource_name = "codar_anim"
+
+[sub_resource type="Animation" id="Animation_f3m4x"]
+resource_name = "lixo_anim"
+
 [sub_resource type="Animation" id="Animation_hadwk"]
 resource_name = "paper_click"
 length = 2.6
@@ -60,10 +66,16 @@ tracks/0/keys = {
 "values": [ExtResource("1_cwrvi"), ExtResource("2_vk7xk"), ExtResource("3_f3m4x"), ExtResource("4_esa8i"), ExtResource("5_s2yc1"), ExtResource("6_ev7gy"), ExtResource("7_fmwmj"), ExtResource("8_px6ua"), ExtResource("9_jwq3e"), ExtResource("10_sq01i"), ExtResource("11_k42kd"), ExtResource("12_rsunm"), ExtResource("13_nhu1u"), ExtResource("14_a237r"), ExtResource("15_suvxt"), ExtResource("16_3qwv0"), ExtResource("17_xxhua"), ExtResource("18_f7x46"), ExtResource("19_jwy8o"), ExtResource("20_wa2e5"), ExtResource("21_ow1tn"), ExtResource("22_aj6kw"), ExtResource("23_wu1a3"), ExtResource("24_sqhr8"), ExtResource("25_yhxf2"), ExtResource("1_to1lb")]
 }
 
+[sub_resource type="Animation" id="Animation_esa8i"]
+resource_name = "plantar_anim"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1cn3q"]
 _data = {
 &"RESET": SubResource("Animation_ag2v5"),
-&"paper_click": SubResource("Animation_hadwk")
+&"codar_anim": SubResource("Animation_vk7xk"),
+&"lixo_anim": SubResource("Animation_f3m4x"),
+&"paper_click": SubResource("Animation_hadwk"),
+&"plantar_anim": SubResource("Animation_esa8i")
 }
 
 [node name="botaoPrincipal" type="VBoxContainer" unique_id=726666360]
@@ -77,7 +89,7 @@ texture = ExtResource("1_cwrvi")
 
 [node name="Button" type="Button" parent="." unique_id=1619858715]
 layout_mode = 2
-text = "Estudar"
+text = "Começar"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=875689292]
 libraries/ = SubResource("AnimationLibrary_1cn3q")
