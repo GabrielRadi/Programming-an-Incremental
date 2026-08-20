@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://iupichumrp0l" path="res://botao_principal.tscn" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://g2c50wbcp2jf" path="res://control.gd" id="1_62e2m"]
+[ext_resource type="Texture2D" uid="uid://rmrl3w5f36me" path="res://Backgrounds/PapelBg.jpeg" id="2_qtu10"]
 
 [node name="Control" type="Control" unique_id=1529067285]
 layout_mode = 3
@@ -11,6 +12,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_62e2m")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=67059458]
+layout_mode = 0
+offset_right = 1205.5555
+offset_bottom = 645.0
+texture = ExtResource("2_qtu10")
+expand_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=597121274]
 layout_mode = 1
@@ -39,6 +47,7 @@ text = "Experiencia: "
 
 [node name="Prestige_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=80788922]
 custom_minimum_size = Vector2(163, 0)
+custom_maximum_size = Vector2(163, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

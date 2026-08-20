@@ -57,6 +57,7 @@ func prestigio() -> void:
 	if (game_data.nivel_de_prestigio < 1 && global.game_data.p1):
 		game_data.nivel_de_prestigio = 1
 		get_tree().change_scene_to_file("res://control.tscn")
+		global.game_data.bg = "CodeBg"
 		save_data()
 	if (game_data.p4):
 		get_tree().change_scene_to_file("res://escolha_de_ODS.tscn")
@@ -64,6 +65,16 @@ func prestigio() -> void:
 	else:
 		get_tree().change_scene_to_file("res://control.tscn")
 		save_data()
+
+func trocarBackground() -> void: # Função para garantir que o BackGround está de acordo com o progresso do jogador
+	if global.game_data.nivel_de_prestigio == 0:
+		global.game_data.bg = "PapelBg"
+	elif global.game_data.nivel_de_prestigio == 1:
+		global.game_data.bg = "CodeBg"
+	elif global.game_data.nivel_de_prestigio == 2:
+		global.game_data.bg = "PlantaBg"
+	elif global.game_data.nivel_de_prestigio == 3:
+		global.game_data.bg = "LixoBg"
 
 func format(valor: float) -> String:
 	if valor < 1000:

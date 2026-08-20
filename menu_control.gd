@@ -6,7 +6,6 @@ func _ready() -> void:
 	if global.game_data.musica and Musica.is_playing == false:
 		Musica.play_music(Musica.MUSICA_FUNDO_INCREMENTALIS)
 
-
 func _on_start_button_pressed() -> void:
 	Musica.play_SFX(Musica.START)
 	get_tree().change_scene_to_file("res://control.tscn")
