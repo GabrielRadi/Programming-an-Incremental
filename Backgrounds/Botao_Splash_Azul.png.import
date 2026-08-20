@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr8dwpxbgupfx"
-path="res://.godot/imported/Incrementalis.png-c07ff97b135ea52a37543cf44daaf0f9.ctex"
+uid="uid://dm3yvmu8jydp8"
+path="res://.godot/imported/Botao_Splash_Azul.png-52af4feac476ed1bb16dd06ea541fa59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Incrementalis.png"
-dest_files=["res://.godot/imported/Incrementalis.png-c07ff97b135ea52a37543cf44daaf0f9.ctex"]
+source_file="res://Backgrounds/Botao_Splash_Azul.png"
+dest_files=["res://.godot/imported/Botao_Splash_Azul.png-52af4feac476ed1bb16dd06ea541fa59.ctex"]
 
 [params]
 

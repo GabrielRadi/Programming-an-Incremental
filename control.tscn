@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://iupichumrp0l" path="res://botao_principal.tscn" id="1_0fbet"]
 [ext_resource type="Script" uid="uid://g2c50wbcp2jf" path="res://control.gd" id="1_62e2m"]
 [ext_resource type="Texture2D" uid="uid://rmrl3w5f36me" path="res://Backgrounds/PapelBg.jpeg" id="2_qtu10"]
+[ext_resource type="Texture2D" uid="uid://bx7urx13enovk" path="res://Backgrounds/Botao_Splash_Vermelho..png" id="3_ee4bf"]
 
 [node name="Control" type="Control" unique_id=1529067285]
 layout_mode = 3
@@ -52,13 +53,20 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Prestigio"
+icon = ExtResource("3_ee4bf")
+flat = true
+icon_alignment = 1
 
 [node name="Leave_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1934020365]
-custom_minimum_size = Vector2(163, 80)
+custom_minimum_size = Vector2(163, 40)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-text = "SAIR"
+text = "
+SAIR"
+icon = ExtResource("3_ee4bf")
+flat = true
+icon_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=924367494]
 custom_minimum_size = Vector2(200, 80)
