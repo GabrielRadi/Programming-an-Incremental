@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://g2c50wbcp2jf" path="res://control.gd" id="1_62e2m"]
 [ext_resource type="Texture2D" uid="uid://rmrl3w5f36me" path="res://Backgrounds/PapelBg.jpeg" id="2_qtu10"]
 [ext_resource type="Texture2D" uid="uid://bx7urx13enovk" path="res://Backgrounds/Botao_Splash_Vermelho..png" id="3_ee4bf"]
+[ext_resource type="Texture2D" uid="uid://dm3yvmu8jydp8" path="res://Backgrounds/Botao_Splash_Azul.png" id="4_kbped"]
 
 [node name="Control" type="Control" unique_id=1529067285]
 layout_mode = 3
@@ -69,7 +70,7 @@ flat = true
 icon_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=924367494]
-custom_minimum_size = Vector2(200, 80)
+custom_minimum_size = Vector2(200, 88)
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -77,6 +78,10 @@ size_flags_horizontal = 3
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Oculos       "
+icon = ExtResource("4_kbped")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="Velocidade_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=447839919]
 layout_mode = 2
@@ -90,6 +95,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Livro          "
+icon = ExtResource("4_kbped")
+flat = true
+icon_alignment = 1
 
 [node name="ComprarLivro_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=942312369]
 layout_mode = 2
@@ -104,6 +112,9 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Canetas 
 Coloridas                   "
+icon = ExtResource("4_kbped")
+flat = true
+icon_alignment = 1
 
 [node name="MaisEXP_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3" unique_id=1820313473]
 layout_mode = 2
@@ -118,6 +129,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Assistente"
+icon = ExtResource("4_kbped")
+flat = true
+icon_alignment = 1
 
 [node name="Assistente_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4" unique_id=506191042]
 layout_mode = 2
