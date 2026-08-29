@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cxyimjlog4jq7"]
 
 [ext_resource type="Script" uid="uid://ddexn2u8r30pc" path="res://escolha_de_ods.gd" id="1_rb0s3"]
+[ext_resource type="Texture2D" uid="uid://6xeis38hdqcq" path="res://Backgrounds/prestigio.jpeg" id="2_2ctod"]
 
 [node name="Control" type="Control" unique_id=345742898]
 layout_mode = 3
@@ -10,6 +11,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rb0s3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=629092501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2ctod")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1675642444]
 layout_mode = 1
