@@ -29,3 +29,6 @@ class_name GameData
 # audio e sfx:
 @export var musica: bool = true
 @export var sfx: bool = true
+
+# Background
+@export var bg: String = "PapelBg"

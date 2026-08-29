@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtx6hdgqo30sl"
-path="res://.godot/imported/Incrementalis.icon.png-9ab1a6c522410508c6df033ee32e4c1d.ctex"
+path="res://.godot/imported/Incrementalis.icon.png-753c8775a3738e3157bc0546f1b2066c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Projeto_PaI/Incrementalis.icon.png"
-dest_files=["res://.godot/imported/Incrementalis.icon.png-9ab1a6c522410508c6df033ee32e4c1d.ctex"]
+source_file="res://Incrementalis.icon.png"
+dest_files=["res://.godot/imported/Incrementalis.icon.png-753c8775a3738e3157bc0546f1b2066c.ctex"]
 
 [params]
 

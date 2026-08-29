@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cruja2lyts37n"
-path="res://.godot/imported/Incrementalis.apple-touch-icon.png-740c0ccc755c34cad0b13ed544c782cf.ctex"
+path="res://.godot/imported/Incrementalis.apple-touch-icon.png-cf25c9a094e44e7e3241fa3ce5ff34da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Projeto_PaI/Incrementalis.apple-touch-icon.png"
-dest_files=["res://.godot/imported/Incrementalis.apple-touch-icon.png-740c0ccc755c34cad0b13ed544c782cf.ctex"]
+source_file="res://Incrementalis.apple-touch-icon.png"
+dest_files=["res://.godot/imported/Incrementalis.apple-touch-icon.png-cf25c9a094e44e7e3241fa3ce5ff34da.ctex"]
 
 [params]
 

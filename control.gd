@@ -10,6 +10,8 @@ extends Control
 @onready var mais_exp_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_label
 @onready var assistente_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg
 @onready var assistente_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_label
+@onready var texture_rect: TextureRect = $TextureRect
+
 
 const BOTAO_PRINCIPAL = preload("uid://iupichumrp0l")
 
@@ -17,6 +19,7 @@ func _ready() -> void: # função pra carregar os elementos como objetos (botão
 	check_status()
 	check_disabled()
 	recarregar_botoes_salvos()
+	trocar_background(global.game_data.bg)
 
 func _process(_delta: float) -> void:
 	experiencia_label.text = "Experiencia: " + global.format(global.game_data.money)
@@ -191,6 +194,15 @@ func _on_prestige_button_pressed() -> void:
 func _on_leave_button_pressed() -> void:
 	global.save_data()
 	get_tree().change_scene_to_file("res://menu.tscn")
+
+func trocar_background(nome: String) -> void:
+	global.trocarBackground()
+	var path_completo = "res://Backgrounds/" + global.game_data.bg + ".jpeg"
+	if ResourceLoader.exists(path_completo):
+		var nova_textura = load(path_completo)
+		$TextureRect.texture = nova_textura
+	else:
+		global.game_data.bg = "PapelBg"
 
 # Sons de Hover do Mouse
 

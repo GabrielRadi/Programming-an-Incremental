@@ -20,6 +20,7 @@ func _on_ods_15_reflorestamento_pressed() -> void:
 		Musica.play_SFX(Musica.START)
 		get_tree().change_scene_to_file("res://control.tscn")
 		global.game_data.nivel_de_prestigio = 2
+		global.game_data.bg = "PlantaBg"
 		global.save_data()
 
 func _on_ods_12_lixo_pressed() -> void:
@@ -30,6 +31,7 @@ func _on_ods_12_lixo_pressed() -> void:
 		Musica.play_SFX(Musica.START)
 		get_tree().change_scene_to_file("res://control.tscn")
 		global.game_data.nivel_de_prestigio = 3
+		global.game_data.bg = "LixoBg"
 		global.save_data()
 
 func _on_timer_timeout() -> void:
