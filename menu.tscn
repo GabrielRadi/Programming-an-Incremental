@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://m7ob5wd3ut1c"]
 
 [ext_resource type="Script" uid="uid://bb25uiml8u5ld" path="res://menu_control.gd" id="1_lti8b"]
-
 [ext_resource type="Texture2D" uid="uid://v0oom3pakrdm" path="res://Backgrounds/menu.jpeg" id="2_ouk20"]
 
-
-[node name="Control" type="Control" unique_id=103062199]
+[node name="Control2" type="Control" unique_id=103062199]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,11 +13,15 @@ grow_vertical = 2
 script = ExtResource("1_lti8b")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=576921546]
-layout_mode = 0
-offset_right = 1155.0
-offset_bottom = 655.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_ouk20")
-expand_mode = 5
+expand_mode = 1
+stretch_mode = 6
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1881118153]
 layout_mode = 1
