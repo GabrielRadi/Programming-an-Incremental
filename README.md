@@ -2,8 +2,7 @@
 
 
 
-!([Backgrounds/menu.jpeg](https://github.com/GabrielRadi/Programming-an-Incremental/blob/main/Backgrounds/menu.jpeg?raw=true))
-
+![Tela de Menu do Incrementalis](https://raw.githubusercontent.com/GabrielRadi/Programming-an-Incremental/refs/heads/main/Backgrounds/menu.jpeg)
 
 
 já imaginou como seria jogar um jogo incremental... sobre fazer jogos incrementais? 
