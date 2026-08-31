@@ -2,8 +2,7 @@
 
 
 
-!\[Tela de Menu do Incrementalis](Backgrounds/menu.jpeg)
-
+![Tela de Menu do Incrementalis](https://raw.githubusercontent.com/GabrielRadi/Programming-an-Incremental/refs/heads/main/Backgrounds/menu.jpeg)
 
 
 já imaginou como seria jogar um jogo incremental... sobre fazer jogos incrementais? 
@@ -33,9 +32,7 @@ Leonardo Ribeiro Costa - Nosso Ajudante Geral! Além de Ajudar a compor a maior 
 Otávio Augusto Milioni Costa - E por ultimo mas não menos importante, temos o Designer fantástico que fez todos os botões do jogo! Além de também ter feito um papel excelente na documentação!
 
 
-
-!\[Botão de Pasta do Jogo!](Backgrounds/BotaoPasta.png)
-
+![Botão do Jogo](https://raw.githubusercontent.com/GabrielRadi/Programming-an-Incremental/refs/heads/main/Backgrounds/BotaoPasta.png)
 
 
 ## ***Agora hora de alguns fun facts!***
