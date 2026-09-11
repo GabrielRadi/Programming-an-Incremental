@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3ni1ngr1ex0f" path="res://control_prestige.gd" id="1_mrfx6"]
 [ext_resource type="Texture2D" uid="uid://6xeis38hdqcq" path="res://Backgrounds/prestigio.jpeg" id="2_ivh8u"]
+[ext_resource type="Texture2D" uid="uid://h62vsxowbpup" path="res://Buttons/BotaoCertificado.png" id="3_p2ros"]
 
 [node name="Control" type="Control" unique_id=2061822227]
 layout_mode = 3
@@ -41,6 +42,7 @@ size_flags_vertical = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Certificados:"
 uppercase = true
 
@@ -56,6 +58,8 @@ size_flags_vertical = 4
 text = "Comprar um
 Notebook
 (1 Certificado)"
+flat = true
+icon_alignment = 1
 
 [node name="p2_button" type="Button" parent="VBoxContainer" unique_id=1204746791]
 custom_minimum_size = Vector2(300, 0)
@@ -64,6 +68,8 @@ size_flags_horizontal = 4
 text = "Aprender
 GDScript
 (5 Certificados)"
+flat = true
+icon_alignment = 1
 
 [node name="p3_button" type="Button" parent="VBoxContainer" unique_id=1957969452]
 custom_minimum_size = Vector2(300, 0)
@@ -72,6 +78,8 @@ size_flags_horizontal = 4
 text = "Aprender
 Design
 (15 Certificados)"
+flat = true
+icon_alignment = 1
 
 [node name="p4_button" type="Button" parent="VBoxContainer" unique_id=1631927174]
 custom_minimum_size = Vector2(300, 0)
@@ -80,6 +88,8 @@ size_flags_horizontal = 4
 text = "Estudar a
 Natureza
 (30 Certificados)"
+flat = true
+icon_alignment = 1
 
 [node name="p5_button" type="Button" parent="VBoxContainer" unique_id=1874833107]
 custom_minimum_size = Vector2(300, 0)
@@ -88,6 +98,8 @@ size_flags_horizontal = 4
 text = "Aprender Coleta
 De Lixo
 (60 Certificados)"
+flat = true
+icon_alignment = 1
 
 [node name="NoP1WarningLabel" type="Label" parent="VBoxContainer" unique_id=673019851]
 layout_mode = 2
@@ -119,6 +131,9 @@ layout_mode = 2
 size_flags_horizontal = 10
 text = "Se Formar!
 {120 Certificados}"
+icon = ExtResource("3_p2ros")
+flat = true
+icon_alignment = 1
 
 [node name="Timer" type="Timer" parent="." unique_id=1961763895]
 wait_time = 3.0

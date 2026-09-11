@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6h6lamq2km0l"
-path="res://.godot/imported/Botao_splash_azul.png-8b2cfb545862727e548b100b19448efd.ctex"
+uid="uid://wn317mkcnh4o"
+path="res://.godot/imported/Botao_azul_splash.png-10e314e7b7dd76022f2ae1ed13f2c690.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/Botao_splash_azul.png"
-dest_files=["res://.godot/imported/Botao_splash_azul.png-8b2cfb545862727e548b100b19448efd.ctex"]
+source_file="res://Backgrounds/Botao_azul_splash.png"
+dest_files=["res://.godot/imported/Botao_azul_splash.png-10e314e7b7dd76022f2ae1ed13f2c690.ctex"]
 
 [params]
 

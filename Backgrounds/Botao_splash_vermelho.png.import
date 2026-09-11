@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx7urx13enovk"
-path="res://.godot/imported/Botao_Splash_Vermelho..png-4e35837a51bf636715769227a9405993.ctex"
+uid="uid://bn18dk1nt8vug"
+path="res://.godot/imported/Botao_splash_vermelho.png-ac9295ef7c545863ff13bae6a15be888.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/Botao_Splash_Vermelho..png"
-dest_files=["res://.godot/imported/Botao_Splash_Vermelho..png-4e35837a51bf636715769227a9405993.ctex"]
+source_file="res://Backgrounds/Botao_splash_vermelho.png"
+dest_files=["res://.godot/imported/Botao_splash_vermelho.png-ac9295ef7c545863ff13bae6a15be888.ctex"]
 
 [params]
 
