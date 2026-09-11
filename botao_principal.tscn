@@ -27,6 +27,11 @@
 [ext_resource type="Texture2D" uid="uid://b611glrcui4pb" path="res://FarmSprites/FarmSprites/sprite_tree22.png" id="23_wu1a3"]
 [ext_resource type="Texture2D" uid="uid://bf1jynibrq38y" path="res://FarmSprites/FarmSprites/sprite_tree23.png" id="24_sqhr8"]
 [ext_resource type="Texture2D" uid="uid://52x5qfs3she0" path="res://FarmSprites/FarmSprites/sprite_tree24.png" id="25_yhxf2"]
+[ext_resource type="Texture2D" uid="uid://dochcc5vjk13l" path="res://Animations/Planta1.png" id="28_fmwmj"]
+[ext_resource type="Texture2D" uid="uid://xpo171vrr3sa" path="res://Animations/Planta2.png" id="29_px6ua"]
+[ext_resource type="Texture2D" uid="uid://dqp4amhatedp5" path="res://Animations/Planta3.png" id="30_jwq3e"]
+[ext_resource type="Texture2D" uid="uid://dj60e2sc1vfq7" path="res://Animations/Planta4.png" id="31_sq01i"]
+[ext_resource type="Texture2D" uid="uid://bkpsyi37nu75c" path="res://Animations/Planta5.png" id="32_k42kd"]
 
 [sub_resource type="Animation" id="Animation_ag2v5"]
 length = 0.001
@@ -68,6 +73,19 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_esa8i"]
 resource_name = "plantar_anim"
+length = 2.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 1.2333333, 1.9333333, 2.5666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("28_fmwmj"), ExtResource("29_px6ua"), ExtResource("30_jwq3e"), ExtResource("31_sq01i"), ExtResource("32_k42kd")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1cn3q"]
 _data = {
