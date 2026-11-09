@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bb25uiml8u5ld" path="res://menu_control.gd" id="1_lti8b"]
 [ext_resource type="Texture2D" uid="uid://v0oom3pakrdm" path="res://Backgrounds/menu.jpeg" id="2_ouk20"]
+[ext_resource type="Texture2D" uid="uid://r4f83aqft30t" path="res://Buttons/IniciarButton.png" id="3_mae5d"]
 
 [node name="Control2" type="Control" unique_id=103062199]
 layout_mode = 3
@@ -37,7 +38,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 387.0
-offset_top = 286.0
+offset_top = 261.0
 offset_right = -421.0
 offset_bottom = -160.0
 grow_horizontal = 2
@@ -56,6 +57,11 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 10
 text = "INICIAR JOGO!"
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer/StartButton" unique_id=2124983192]
+position = Vector2(171, 2.9999895)
+scale = Vector2(0.23999998, 0.15277782)
+texture = ExtResource("3_mae5d")
 
 [node name="ConfButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1864020373]
 layout_mode = 2

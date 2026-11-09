@@ -131,9 +131,13 @@ layout_mode = 2
 size_flags_horizontal = 10
 text = "Se Formar!
 {120 Certificados}"
-icon = ExtResource("3_p2ros")
 flat = true
 icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/EndGame_button" unique_id=738334523]
+position = Vector2(151.49998, 44.5)
+scale = Vector2(2.6833332, 2.4833333)
+texture = ExtResource("3_p2ros")
 
 [node name="Timer" type="Timer" parent="." unique_id=1961763895]
 wait_time = 3.0
