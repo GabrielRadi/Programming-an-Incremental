@@ -16,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_62e2m")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=67059458]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,26 +35,30 @@ anchor_bottom = 1.0
 offset_left = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1963075333]
 layout_mode = 2
 
-[node name="HBoxContainer" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=1740497302]
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBoxContainer" unique_id=1740497302]
 layout_mode = 2
 
-[node name="VeloShow_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=158702029]
+[node name="VeloShow_label" type="Label" parent="MarginContainer/VBoxContainer/Grid" unique_id=158702029]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Velocidade: "
 horizontal_alignment = 1
 
-[node name="ExperienciaLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1254169478]
+[node name="ExperienciaLabel" type="Label" parent="MarginContainer/VBoxContainer/Grid" unique_id=1254169478]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 text = "Experiencia: "
 
-[node name="Prestige_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=80788922]
-custom_minimum_size = Vector2(163, 0)
-custom_maximum_size = Vector2(163, 40)
+[node name="Prestige_Button" type="Button" parent="MarginContainer/VBoxContainer/Grid" unique_id=80788922]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(163, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -62,7 +67,8 @@ icon = ExtResource("3_kbped")
 flat = true
 icon_alignment = 1
 
-[node name="Leave_Button" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1934020365]
+[node name="Leave_Button" type="Button" parent="MarginContainer/VBoxContainer/Grid" unique_id=1934020365]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(163, 40)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -73,12 +79,21 @@ icon = ExtResource("3_kbped")
 flat = true
 icon_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=924367494]
+[node name="painelUpgrades" type="PanelContainer" parent="MarginContainer/VBoxContainer/Grid" unique_id=1790026795]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades" unique_id=2117464972]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer" unique_id=924367494]
 custom_minimum_size = Vector2(200, 88)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Velocidade_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=371247170]
+[node name="Velocidade_upg" type="Button" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer" unique_id=371247170]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Oculos       "
@@ -87,15 +102,17 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Velocidade_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=447839919]
+[node name="Velocidade_label" type="Label" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer" unique_id=447839919]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Deixa o Botão mais rápido"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=951916033]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer" unique_id=951916033]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 
-[node name="ComprarLivro_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=941352350]
+[node name="ComprarLivro_upg" type="Button" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer2" unique_id=941352350]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Livro          "
@@ -104,15 +121,17 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="ComprarLivro_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=942312369]
+[node name="ComprarLivro_label" type="Label" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer2" unique_id=942312369]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Mais um Livro!"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=2021268296]
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer" unique_id=2021268296]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 
-[node name="MaisEXP_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3" unique_id=1598600705]
+[node name="MaisEXP_upg" type="Button" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer3" unique_id=1598600705]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Canetas 
@@ -122,16 +141,18 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="MaisEXP_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3" unique_id=1820313473]
+[node name="MaisEXP_label" type="Label" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer3" unique_id=1820313473]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Deixa tudo mais bonito 
 e organizado!"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=947762184]
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer" unique_id=947762184]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 
-[node name="Assistente_upg" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4" unique_id=1213905972]
+[node name="Assistente_upg" type="Button" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer4" unique_id=1213905972]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 text = "Comprar Assistente"
@@ -140,7 +161,8 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Assistente_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4" unique_id=506191042]
+[node name="Assistente_label" type="Label" parent="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer4" unique_id=506191042]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Um amigo pra te ajudar!"
 
@@ -149,6 +171,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=847638739]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -160,16 +183,16 @@ layout_mode = 2
 [node name="AFKtimer" type="Timer" parent="." unique_id=478906893]
 autostart = true
 
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Prestige_Button" to="." method="_on_prestige_button_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Prestige_Button" to="." method="_on_prestige_button_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/Leave_Button" to="." method="_on_leave_button_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/Leave_Button" to="." method="_on_leave_button_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Velocidade_upg" to="." method="_on_velocidade_upg_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Velocidade_upg" to="." method="_on_velocidade_upg_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_upg" to="." method="_on_comprar_livro_upg_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_upg" to="." method="_on_comprar_livro_upg_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_upg" to="." method="_on_mais_exp_upg_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_upg" to="." method="_on_mais_exp_upg_pressed"]
-[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg" to="." method="_on_assistente_upg_mouse_entered"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg" to="." method="_on_assistente_upg_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Grid/Prestige_Button" to="." method="_on_prestige_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/Prestige_Button" to="." method="_on_prestige_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Grid/Leave_Button" to="." method="_on_leave_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/Leave_Button" to="." method="_on_leave_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer/Velocidade_upg" to="." method="_on_velocidade_upg_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer/Velocidade_upg" to="." method="_on_velocidade_upg_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer2/ComprarLivro_upg" to="." method="_on_comprar_livro_upg_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer2/ComprarLivro_upg" to="." method="_on_comprar_livro_upg_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer3/MaisEXP_upg" to="." method="_on_mais_exp_upg_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer3/MaisEXP_upg" to="." method="_on_mais_exp_upg_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer4/Assistente_upg" to="." method="_on_assistente_upg_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Grid/painelUpgrades/VBoxContainer/HBoxContainer4/Assistente_upg" to="." method="_on_assistente_upg_pressed"]
 [connection signal="timeout" from="AFKtimer" to="." method="_on_timer_timeout"]

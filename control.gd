@@ -1,22 +1,25 @@
 extends Control
 
-@onready var experiencia_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/ExperienciaLabel
-@onready var velo_show_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/VeloShow_label
-@onready var velocidade_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/Velocidade_upg
-@onready var comprar_livro_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_upg
-@onready var comprar_livro_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/ComprarLivro_label
-@onready var grid_container: GridContainer = $MarginContainer/VBoxContainer/ScrollContainer/GridContainer
-@onready var mais_exp_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_upg
-@onready var mais_exp_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer3/MaisEXP_label
-@onready var assistente_upg: Button = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_upg
-@onready var assistente_label: Label = $MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer4/Assistente_label
-@onready var texture_rect: TextureRect = $TextureRect
-
+@onready var experiencia_label: Label = %ExperienciaLabel
+@onready var velo_show_label: Label = %VeloShow_label
+@onready var velocidade_upg: Button = %Velocidade_upg
+@onready var velocidade_label: Label = %Velocidade_label
+@onready var comprar_livro_upg: Button = %ComprarLivro_upg
+@onready var comprar_livro_label: Label = %ComprarLivro_label
+@onready var grid_container: GridContainer = %GridContainer
+@onready var mais_exp_upg: Button = %MaisEXP_upg
+@onready var mais_exp_label: Label = %MaisEXP_label
+@onready var assistente_upg: Button = %Assistente_upg
+@onready var assistente_label: Label = %Assistente_label
+@onready var texture_rect: TextureRect = %TextureRect
+@onready var prestige_button: Button = %Prestige_Button
+@onready var leave_button: Button = %Leave_Button
 
 const BOTAO_PRINCIPAL = preload("uid://iupichumrp0l")
 
 func _ready() -> void: # função pra carregar os elementos como objetos (botão principal etc)
 	check_status()
+	trocar_botoes()
 	check_disabled()
 	recarregar_botoes_salvos()
 	trocar_background(global.game_data.bg)
@@ -87,7 +90,7 @@ func check_status() -> void: #checa em qual prestigio o player está
 	match global.game_data.nivel_de_prestigio:
 		0:
 			velocidade_upg.text = "Comprar Oculos"
-			velo_show_label.text = "Deixa o Botão mais rápido"
+			velocidade_label.text = "Deixa o Botão mais rápido"
 			comprar_livro_upg.text = "Comprar Livro"
 			comprar_livro_label.text = "Adiciona mais um Livro"
 			mais_exp_upg.text = "Comprar Canetas Coloridas"
@@ -96,7 +99,7 @@ func check_status() -> void: #checa em qual prestigio o player está
 			assistente_label.text = "Gera Experiencia\nsem precisar\nclicar no botão"
 		1:
 			velocidade_upg.text = "Melhorar a digitação"
-			velo_show_label.text = "para poder codar mais rápido!"
+			velocidade_label.text = "para poder codar mais rápido!"
 			comprar_livro_upg.text = "Contratar um DEV novo"
 			comprar_livro_label.text = "Adiciona um Computador extra\npara ajudar"
 			mais_exp_upg.text = "Estudar GDScript"
@@ -105,7 +108,7 @@ func check_status() -> void: #checa em qual prestigio o player está
 			assistente_label.text = "Reutilizar Código é útil!\n e permite lhe darexperiencia\nsem precionar o botão"
 		2:
 			velocidade_upg.text = "Aprender a plantar\nmais rápido!"
-			velo_show_label.text = "Sim, até nisso dá pra melhorar"
+			velocidade_label.text = "Sim, até nisso dá pra melhorar"
 			comprar_livro_upg.text = "Comprar uma área"
 			comprar_livro_label.text = "Para poder plantar\nmais arvores"
 			mais_exp_upg.text = "Plantar diferentes\ntipos de arvore"
@@ -114,13 +117,32 @@ func check_status() -> void: #checa em qual prestigio o player está
 			assistente_label.text = "Pra quê plantar você mesmo? \n quando a IA faz por você?"
 		3: 
 			velocidade_upg.text = "Comprar Luvas"
-			velo_show_label.text = "para não precisar lavar suas mãos\neconomizando tempo!"
+			velocidade_label.text = "para não precisar lavar suas mãos\neconomizando tempo!"
 			comprar_livro_upg.text = "Chamar voluntários"
 			comprar_livro_label.text = "Mais uma pessoa para te ajudar!"
 			mais_exp_upg.text = "Aprender técnicas de coleta"
 			mais_exp_label.text = "Funciona muito bem! e permite coletar mais lixo!"
 			assistente_upg.text = "Comprar Drones Automatizados"
 			assistente_label.text = "Coletar lixo de lagos assim é\nsurpreendentemente funcional!"
+
+func trocar_botoes() -> void:
+	var imagem: Texture2D
+	match global.game_data.nivel_de_prestigio:
+		0: imagem = preload("res://Backgrounds/BotaoTintaAzul.png")  # estudo
+		1: imagem = preload("res://Backgrounds/BotaoPasta.png")  # código
+		2: imagem = preload("res://Backgrounds/BotaoFumaca.png")  # ODS 15
+		3: imagem = preload("res://Backgrounds/BotaoLatinhaRefri.png")  # ODS 12
+		_: imagem = preload("res://Backgrounds/BotaoTintaAzul.png")  # segurança
+	for b: Button in [velocidade_upg, comprar_livro_upg, mais_exp_upg, assistente_upg]:
+		b.icon = imagem
+		b.expand_icon = true
+		b.custom_minimum_size = Vector2(300, 80)
+		b.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+
+	for b: Button in [prestige_button, leave_button]:
+		b.icon = imagem
+		b.expand_icon = true
+		b.custom_minimum_size = Vector2(163, 40)
 
 func _on_velocidade_upg_pressed() -> void: # Velocidade da Animação
 	check_disabled()
@@ -200,7 +222,7 @@ func trocar_background(nome: String) -> void:
 	var path_completo = "res://Backgrounds/" + global.game_data.bg + ".jpeg"
 	if ResourceLoader.exists(path_completo):
 		var nova_textura = load(path_completo)
-		$TextureRect.texture = nova_textura
+		texture_rect.texture = nova_textura
 	else:
 		global.game_data.bg = "PapelBg"
 
