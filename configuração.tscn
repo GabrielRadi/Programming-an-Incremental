@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://utii72vnpcn7"]
 
 [ext_resource type="Script" uid="uid://b8dv30xyoy8fd" path="res://configuracao.gd" id="1_jdi43"]
+[ext_resource type="Texture2D" uid="uid://fmvqb4g8ahs3" path="res://index.icon.png" id="2_kk2rw"]
 
 [node name="Control" type="Control" unique_id=277386637]
 layout_mode = 3
@@ -25,6 +26,11 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1217948580]
 layout_mode = 2
 size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/VBoxContainer" unique_id=163418279]
+position = Vector2(273.99997, 72.99999)
+scale = Vector2(4.46875, 4.2031245)
+texture = ExtResource("2_kk2rw")
 
 [node name="voltar_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=330322575]
 layout_mode = 2

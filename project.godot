@@ -21,6 +21,10 @@ global="*uid://c8bwagfqgqn01"
 Musica="*uid://2koevr14l1ic"
 SfxStreamPlayer="*uid://2koevr14l1ic"
 
+[display]
+
+window/size/mode=3
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

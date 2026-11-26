@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://brd7xw4tnf4ba"]
+
+[ext_resource type="Texture2D" uid="uid://v0oom3pakrdm" path="res://Backgrounds/menu.jpeg" id="1_hxeff"]
+[ext_resource type="Script" uid="uid://bfgh1587lw2xr" path="res://tela_certificado_final.gd" id="1_nbppk"]
+
+[node name="Control" type="Control" unique_id=1530839000]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nbppk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=750957487]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hxeff")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1227602386]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 187.0
+offset_right = 658.0
+offset_bottom = 218.0
+placeholder_text = "Insira seu Nome Aqui"
+expand_to_text_length = true
+backspace_deletes_composite_character_enabled = true
+clear_button_enabled = true
+select_all_on_focus = true
+
+[node name="Label" type="Label" parent="." unique_id=1750754945]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 434.0
+offset_top = 328.0
+offset_right = 692.0
+offset_bottom = 395.0
+text = "Obrigado por Jogar
+	Incrementalis!"
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="Button" type="Button" parent="." unique_id=2096341720]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 47.0
+offset_top = 513.0
+offset_right = -945.0
+offset_bottom = 599.0
+grow_horizontal = 2
+text = "Voltar"
+
+[connection signal="focus_entered" from="LineEdit" to="." method="_on_line_edit_focus_entered"]
+[connection signal="text_submitted" from="LineEdit" to="." method="_on_line_edit_text_submitted"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
